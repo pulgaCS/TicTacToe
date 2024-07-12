@@ -34,4 +34,48 @@ A simple C# implementation of Tic-Tac-Toe playable in the console.
 - `Player.cs`: Handles player moves
 - `AI.cs`: Implements AI opponent strategies
 
+## UML Diagram
+
+```mermaid
+classDiagram
+    class Program {
+        +Main(string[] args)$ void
+    }
+    class Game {
+        -Board board
+        -Player player
+        -AI ai
+        -bool playerTurn
+        -bool exit
+        -int playerScore
+        -int aiScore
+        +Start() void
+        +PlayGame() void
+    }
+    class Board {
+        -char[,] board
+        +GetCell(int row, int column) char
+        +SetCell(int row, int column, char c) void
+        +CheckVictory(char c) bool
+        +CheckDraw() bool
+        +Render() void
+    }
+    class Player {
+        -Board board
+        +MakeMove() void
+    }
+    class AI {
+        -Board board
+        +MakeMove() void
+        +MakeMinimaxMove() void
+    }
+
+    Program --> Game : creates
+    Game --> Board : has
+    Game --> Player : has
+    Game --> AI : has
+    Player --> Board : uses
+    AI --> Board : uses
+```
+
 Enjoy the game!
