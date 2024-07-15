@@ -59,6 +59,7 @@ classDiagram
         +CheckVictory(char c) bool
         +CheckDraw() bool
         +Render() void
+        +GetOpenCells() List<(int, int)>
     }
     class Player {
         -Board board
