@@ -37,7 +37,6 @@ A simple C# implementation of Tic-Tac-Toe playable in the console.
 ## UML Diagram
 
 ```mermaid
-
 classDiagram
     class Program {
         +Main(string[] args)$ void
@@ -58,10 +57,11 @@ classDiagram
         -char[,] board
         +GetCell(int row, int column) char
         +SetCell(int row, int column, char c) void
+        +GetOpenCells() List<(int, int)>
         +CheckVictory(char c) bool
         +CheckDraw() bool
         +Render() void
-        +GetOpenCells() List<(int, int)>
+        +Reset() void
     }
     class Player {
         -Board board
