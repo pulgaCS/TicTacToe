@@ -37,6 +37,7 @@ A simple C# implementation of Tic-Tac-Toe playable in the console.
 ## UML Diagram
 
 ```mermaid
+
 classDiagram
     class Program {
         +Main(string[] args)$ void
@@ -51,6 +52,7 @@ classDiagram
         -int aiScore
         +Start() void
         +PlayGame() void
+        -EndGame(string gameOverDrawMessage) void
     }
     class Board {
         -char[,] board
@@ -67,10 +69,12 @@ classDiagram
     }
     class AI {
         -Board board
+        -Random rng
+        +AI(Board board)
         +MakeMove() void
         +MakeMinimaxMove() void
+        -Minimax(Board board, int depth, bool isMaximizing, int alpha, int beta) int
     }
-
     Program --> Game : creates
     Game --> Board : has
     Game --> Player : has
@@ -79,4 +83,4 @@ classDiagram
     AI --> Board : uses
 ```
 
-Enjoy the game!
+Enjoy the coding game!
